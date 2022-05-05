@@ -13,8 +13,8 @@ def get_student(name):
         return Schoolkid.objects.get(full_name__contains=name)
     except MultipleObjectsReturned:
         print(dedent("""\
-С таким именем в школе есть несколько человек.
-Уточните, пожалуйста, имя!"""))
+            С таким именем в школе есть несколько человек.
+            Уточните, пожалуйста, имя!"""))
     except ObjectDoesNotExist:
         print("С таким именем в школе никого нет. Введите другое имя")
 
@@ -47,7 +47,7 @@ def create_commendation(name, subject):
 
     if not student:
         return
-    
+
     subject_exist = True
 
     try:
@@ -58,7 +58,7 @@ def create_commendation(name, subject):
     except ObjectDoesNotExist:
         subject_exist = False
         print(dedent('''\
-Такого предмета у этого ученика нет. Введите другой предмет!'''))
+            Такого предмета у этого ученика нет. Введите другой предмет!'''))
 
     if not subject_exist:
         return
